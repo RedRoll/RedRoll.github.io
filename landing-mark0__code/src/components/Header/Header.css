@@ -1,0 +1,222 @@
+.header__hidden-burger-menu,
+.cart__logo {
+    display: none;
+}
+
+.header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.273);
+}
+
+.header__container {
+    min-height: 116px;
+    display: flex;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.273);
+}
+
+/* navbar */
+
+.header__navBar {
+    flex: 1 1 auto;
+}
+
+.navBar__menu {
+
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 35.8px;
+    justify-content: flex-end;
+    
+}
+
+.item__link {
+    color: #ffffff;
+    font-weight: 300;
+    line-height: 160%;
+    
+}
+
+.item__link:hover {
+    text-decoration: underline;
+}
+
+
+/* cart */
+
+.header__cart {
+    display: flex;
+    align-items: center;
+    column-gap: 4.5px;
+    margin-left: 35px;
+}
+
+.cart__link {
+    color: #ffffff;
+    font-size: 17.6px;
+    font-weight: 300;
+    line-height: 160%;
+    letter-spacing: 0.96px;
+    transition: color 1s ease;
+}
+
+.cart__link:hover {
+    text-decoration: underline;
+    color: aqua;
+}
+
+.cart__count {
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 5px 10px;
+    border-radius: 29.938px;
+    background: rgba(129, 129, 139, 0.30);
+
+}
+
+
+
+
+
+
+/* BRAKEPOINTS */
+
+@media (max-width:991.98px) {
+    .header__container {
+        min-height: 90px;
+
+    }
+
+    .navBar__menu {
+        column-gap: 25px;
+    }
+
+    .header__button {
+        padding: 12px 24px!important;
+    }
+}
+
+
+@media(max-width:767.98px) {
+
+    .menu-open .navBar-body, .menu-open .navBar-body::before {
+        left: 0;
+        
+    }
+
+ 
+
+    .navBar-body {
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: -100%;
+        background-color: #000000;
+        z-index: 5;
+        overflow: auto; /*to scroll the content if the menu content does not fit*/
+        transition: all .5s ease;
+    }
+
+    .navBar-body::before {
+        content: '';
+        height: 70px;
+        width: 100%;
+        position: fixed;
+        background-color: #000000; /*bar at the top for butiful scroll of burger content*/
+        top: 0;
+        left: -100%;
+    }
+
+    .navBar__menu {
+        flex-direction: column;
+        row-gap: 10px;
+        font-size: 34px;
+        align-items: center;
+        padding: 100px 15px 30px 15px;
+        
+    }
+
+    .menu__item {
+        width: 100%;
+        text-align: center;
+        /*link expansion to 100% width*/
+    }
+
+    .item__link {
+        display: block;
+        /*for ability to click on 100% of wiewport width*/
+    }
+
+    .header__logo,
+    .header__cart,
+    .header__button,
+    .header__hidden-burger-menu {
+        z-index: 6;
+    }
+
+    .header__hidden-burger-menu {
+        display: flex;
+        min-width: 30px;
+        height: 18px;
+        flex-direction: column;
+        justify-content: space-between;
+        cursor: pointer;
+        margin-left: 25px;
+    }
+
+    .header__hidden-burger-menu span {
+        width: 100%;
+        height: 2px;
+        background-color: #ffffff;
+    }
+
+    .header__container {
+        min-height: 70px;
+    }
+
+    .header__button {
+        padding: 10px 20px!important;
+    }
+}
+
+
+@media(max-width: 600px) {
+    .header__logo {
+        min-width: 38px;
+        max-width: 38px;
+        overflow: hidden;
+    }
+
+    .header__cart,
+    .header__button,
+    .header__hidden-burger-menu {
+        margin-left: 10px!important;
+    }
+
+    .cart__logo {
+        width: 28px;
+        height: 28px;
+        display: block;
+    }
+
+    .cart__link {
+        display: none;
+    }
+
+    .cart__count {
+        background: url(../../img/shopping-bag.svg) center / auto 100% no-repeat;
+        color: #000000;
+        height: 23px;
+        padding-top: 8px;
+    }
+}
+@media (max-width: 300px) {
+    .header__container {
+        padding: 0 5px;
+    }
+}

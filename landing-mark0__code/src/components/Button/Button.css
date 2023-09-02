@@ -1,0 +1,24 @@
+/* Button */
+
+
+.button__link {
+    display: inline-block;
+    flex: 0 0 auto;
+    /*щоб кнопка не складалась при зменьшенні довжини*/
+    margin-left: 25px;
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 160%;
+    letter-spacing: 2px;
+    padding: 16px 29.3px;
+    border-radius: 50px;
+    background-color: #3D96F4;
+    transition: color 1s ease-in-out;
+
+}
+
+.button__link:hover {
+    background-color: #124e8d;
+    color: aqua;
+}

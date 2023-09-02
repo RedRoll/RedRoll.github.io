@@ -1,0 +1,32 @@
+
+
+.text-content__title {
+    color: #ffffff;
+    font-size: 51.2px;
+    font-weight: 500;
+    line-height: 120%;
+    margin-bottom: 28px;
+}
+
+.text-content__text {
+    color: #9c9c9c;
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 150%;
+    text-align: start;
+    margin-bottom: 33px;
+}
+
+.buttons__item1 {
+    padding-left: 24.5px;
+    padding-right: 24.5px;
+}
+
+.buttons__item2 {
+    padding-left: 31.2px;
+    padding-right: 31.2px;
+    background-color: rgba(129, 129, 139, 0.20);
+}
+
+/* border-radius: 50px;
+background: rgba(129, 129, 139, 0.20); */
