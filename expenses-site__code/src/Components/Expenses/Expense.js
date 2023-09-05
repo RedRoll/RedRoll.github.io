@@ -3,6 +3,7 @@ import { useState } from 'react'
 
 import Card from '../UI/Card'
 import ExpensesList from './ExpensesList/ExpensesList'
+import ExpensesChart from './ExpensesChart'
 
 const Expense = (props) => {
     const [filterData, setFilterData] = useState('2020')
@@ -15,7 +16,7 @@ const Expense = (props) => {
 
     const changeHandler = enteredData => {
         setFilterData(enteredData)
-        console.log('data arrived')
+        
 
     }
 
@@ -25,7 +26,7 @@ const Expense = (props) => {
         <li>
             <Card>
                 <ExpensesFilter defaultValue={filterData} onFilterChange={changeHandler} />
-
+                <ExpensesChart filteredExpenses={filteredItems} /> {/*відфільтровані витрати по року =>*/}
                 <ExpensesList data={filteredItems} />
 
             </Card>

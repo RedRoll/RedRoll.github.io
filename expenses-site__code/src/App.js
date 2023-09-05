@@ -44,6 +44,7 @@ const App = () => {
     console.log('data here')
     // для того щоб рендер ExpenseItem пройшов успішно, треба трошки змінити значення ключа date, тобто використати ті дані, які є в отримуваному об'єкті ExpenseData і зміеити ключ date:'2020-02-22' на date: new Date(2020-02-22). Тому що при рендері компоненту ExpenseDate будуть використовуватись влаштовані методи об'єкту new Date, які не будуть працювати з постим стрічковимс знаяченням, яке передається по замовчуванню з форми.
     expenseData['date'] = new Date(expenseData.date)
+    expenseData['amount'] = Number(expenseData.amount) // змінив тип данних на число, бо в кінцевий об'єкт приходила стрічка з числом
 
     
     setExpenses(prevExpenseData => {
