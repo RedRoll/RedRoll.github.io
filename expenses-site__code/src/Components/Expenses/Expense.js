@@ -3,7 +3,7 @@ import { useState } from 'react'
 
 import Card from '../UI/Card'
 import ExpensesList from './ExpensesList/ExpensesList'
-import ExpensesChart from './ExpensesChart'
+import ExpensesChart from '../Chart/ExpensesChart'
 
 const Expense = (props) => {
     const [filterData, setFilterData] = useState('2020')

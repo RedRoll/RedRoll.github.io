@@ -38,7 +38,7 @@ const ExpenseForm = (props) => {
             })
 
             
-            changeStateComponent(() => false)     /*керує станом FromInput через props (коли нажимається кнопка add expense => дані висилаються + закриваються поля input + кнопка cancel) */
+            changeStateComponent(() => false)     /*керує станом FormInput через props (коли нажимається кнопка add expense => дані висилаються + закриваються поля input + кнопка cancel) */
             
 
         }
