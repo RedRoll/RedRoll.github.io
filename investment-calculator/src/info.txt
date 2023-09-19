@@ -1,0 +1,11 @@
+
+
+1. Split the app into components
+
+2. Handle 'submit' & 'reset' button click events
+
+3. Manage States
+
+4. Output results (on screen) 
+
+5. Style the App
