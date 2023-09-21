@@ -1,6 +1,14 @@
 import styles from './ListItem.module.css'
 
 const ListItem = props => {
+
+
+
+    const formatter = new Intl.NumberFormat('en-US', {
+        style: 'currency',
+        currency: 'USD'
+    })
+
     return (
         <table className={styles.result}>
             <thead>
@@ -12,15 +20,19 @@ const ListItem = props => {
                     <th>Invested Capital</th>
                 </tr>
             </thead>
+
             <tbody>
-                <tr>
-                    <td>{props.data.year}</td>
-                    <td>{Math.round(props.data.savingsEndOfYear)}</td>
-                    <td>{Math.round(props.data.yearlyInterest)}</td>
-                    <td>{Math.round(props.data.savingsEndOfYear - props.data.initialSavings - props.data.yearlyContribution * props.data.year)}</td>
-                    <td>{props.data.initialSavings + props.data.yearlyContribution * props.data.year}</td>
-                </tr>
+                {props.data.map(item =>
+                    <tr key={item.year}>
+                        <td>{item.year}</td>
+                        <td>{formatter.format(item.savingsEndOfYear)}</td>
+                        <td>{formatter.format(item.yearlyInterest)}</td>
+                        <td>{formatter.format(item.savingsEndOfYear - item.initialSavings - item.yearlyContribution * item.year)}</td>
+                        <td>{formatter.format(item.initialSavings + item.yearlyContribution * item.year)}</td>
+                    </tr>
+                )}
             </tbody>
+            
         </table>
     )
 }

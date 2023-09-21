@@ -13,31 +13,28 @@ margin-left: 10px;
 `
 const App = () => {
 
-
-
   const [data, setData] = useState(null)
 
-  const calculate = arrivedData => setData(arrivedData) // при натисканні кнопки 'calculate' в формі, запуститься функція calculate, змінивши стан data. Змінений стан data змусить запуститись код файлу (поточного файлу) ще раз, таким чином запуститься код, той зо нижче (який відповідає за наповнення константи readyData), який зробить все необхідне для обробки даних і додаванні їх у константу readyData, на основі якої і відрендеряться потрібні списки.(readyData буде передана до компоненту, який відповідає за рендер - List)
-
+  const calculate = arrivedData => {
+    setData(() => { return arrivedData })
+  } 
+  
 
   const readyData = []
 
-  if (data) {// код запуститься, якщо в data будудуть присутні якісь дані
+  if (data) {
 
-    
-    // визначення змінних на основі даних з input
-    const initialSavings = +data.currentSavings // 10000 (приклад)
-    let currentSavings = +data.currentSavings // 10000
-    const yearlyContribution = +data.yearlyContribution //1200
-    const expectedReturn = +data.expectedReturn / 100 // відсоток  5 / 100
-    const duration = +data.duration // якщо прописати + перед назвою змінної, то дані будуть передані, як числа
-console.log('executed')
-    // якщо, наприклад один з ключів в об'єкті мав би назву з "-" тере, то синтаксис був би таким: приклад -  +data['current-savings']
-    // Така форма запису валідна для доступу до ключа об'єкту, якщо в назаві він має тере.
+
+  
+    const initialSavings = +data.currentSavings 
+    let currentSavings = +data.currentSavings 
+    const yearlyContribution = +data.yearlyContribution 
+    const expectedReturn = +data.expectedReturn / 100 
+    const duration = +data.duration 
 
     for (let i = 0; i < duration; i++) {
-      const yearlyInterest = currentSavings * expectedReturn // очікуваний дохід під вказаний відсоток
-      currentSavings += yearlyInterest + yearlyContribution // сума заощадженнь + очікуваний дохід + річний внесок (ця сума лишається на наступну ітерацію (бо змінюється змінна => змінена змінна бере участь в наступній ітерації))
+      const yearlyInterest = currentSavings * expectedReturn 
+      currentSavings += yearlyInterest + yearlyContribution 
 
       readyData.push({
 
@@ -47,17 +44,16 @@ console.log('executed')
         yearlyContribution: yearlyContribution,
         initialSavings: initialSavings
       });
-
     }
 
+    console.log('executed')
+    
   }
-
-  const reset = () => setData('')
 
   return (
     <Wrapper>
       <Header />
-      <Form onCalculate={calculate} onReset={reset} />
+      <Form onCalculate={calculate} setState={setData} />
       <List data={readyData} />
     </Wrapper>
   );

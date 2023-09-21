@@ -4,7 +4,7 @@ import { useState } from 'react'
 
 const Form = props => {
 
-    const initialInputState = { // створив змінну стартового стану, щоб не прописувати цей об'єкт кілька разів (він буде потрібен кілька разів в такому стані)
+    const initialInputState = {
         currentSavings: '',
         yearlyContribution: '',
         expectedReturn: '',
@@ -15,37 +15,44 @@ const Form = props => {
 
 
 
-    const changeHandler = event => setInputData(prevState => {   // тут без змін
+    const changeHandler = event => setInputData(prevState => {
 
-        const { id, value } = event.target  //деструктуризація обєкту event (id = id(id ідентифікатор input) / value = value(актуальне value з input))
-
+        const { id, value } = event.target
         return {
-            ...prevState, // вертається попередній стан 
-            [id]: value    // + змінюється актуальне значення (з мінюється значення стану актуального input - де зараз проходить event onChange) id треба писати в квадратних дужках, бо так це буде динамічне значення, а не строго закодована назва(якщо написати без квадратних дужок в input додасть нове значення з назвою id)
+            ...prevState,
+            [id]: value
         }
+
 
     })
 
     const submitHandler = event => {
-        event.preventDefault() // запобігає перезавантаженню сторінки та скидуванню state (при перезавантаженні state автоматично скидується)
-        props.onCalculate(inputData)
+        event.preventDefault()
+        if (inputData.currentSavings && inputData.yearlyContribution && inputData.expectedReturn && inputData.duration) {
+            props.onCalculate(inputData)
+            console.log('data departed to app')
+        }
     }
 
+
     const resetHandler = () => {
-        props.onReset()
-        setInputData(initialInputState)
+        setInputData(() => initialInputState)
+        props.setState(null)
     }
+
+    
+
 
     return (
         <form className={styles.form} onSubmit={submitHandler}>
             <div className={styles['input-group']}>
                 <p>
-                    <label htmlFor="currentSavings" >Current Savings ($)</label> {/*htmlFor зв'язує label з form, тобто це все стає єдиним цілим. Клікнувши на текст label активується поле вводу input*/}
-                    <input type="number" id="currentSavings" onChange={changeHandler} />
+                    <label htmlFor="currentSavings" >Current Savings ($)</label>
+                    <input type="number" id="currentSavings" value={inputData.currentSavings} onChange={changeHandler} />
                 </p>
                 <p>
                     <label htmlFor="yearlyContribution">Yearly Savings ($)</label>
-                    <input type="number" id="yearlyContribution" onChange={changeHandler} />
+                    <input type="number" id="yearlyContribution" value={inputData.yearlyContribution} onChange={changeHandler} />
                 </p>
             </div>
             <div className={styles['input-group']}>
@@ -53,11 +60,11 @@ const Form = props => {
                     <label htmlFor="expectedReturn">
                         Expected Interest (%, per year)
                     </label>
-                    <input type="number" id="expectedReturn" onChange={changeHandler} />
+                    <input type="number" id="expectedReturn" value={inputData.expectedReturn} onChange={changeHandler} />
                 </p>
                 <p>
                     <label htmlFor="duration" >Investment Duration (years)</label>
-                    <input type="number" id="duration" onChange={changeHandler} />
+                    <input type="number" id="duration" value={inputData.duration} onChange={changeHandler} />
                 </p>
             </div>
             <p className={styles.actions}>

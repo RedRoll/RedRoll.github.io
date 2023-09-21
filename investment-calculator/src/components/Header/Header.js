@@ -1,5 +1,5 @@
 import styles from './Header.module.css'
-// loogo import
+// logo import
 import logo from '../../assets/investment-calculator-logo.png'
 
 const Header = () => {

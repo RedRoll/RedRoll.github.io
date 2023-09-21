@@ -9,7 +9,7 @@ const List = props => {
 
     return (
         <ul style={{padding: 0}}>
-            {props.data.map(item => (<ListItem key={item.year} data={item} />))}
+            <ListItem data={props.data}/>
         </ul>
     )
 }
