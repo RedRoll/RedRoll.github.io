@@ -1,0 +1,13 @@
+.button {
+    padding: 17px 38px;
+    color: #FFF;
+    font-family: Montserrat;
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: 700;
+    background-color: transparent;
+    white-space: nowrap;
+    border-radius: 40px;
+    border: 2px solid #FFF;
+    cursor: pointer;
+}

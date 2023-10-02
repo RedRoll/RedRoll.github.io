@@ -1,4 +1,4 @@
-import Wrapper from "./components/UI/Wrapper";
+import Wrapper from "./components/UI/wrapper/Wrapper";
 import Header from "./components/header/Header";
 
 function App() {

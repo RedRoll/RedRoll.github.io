@@ -1,6 +1,11 @@
-const Hydra = () => {
+
+
+const Hydra = props => {
+
+  const useClass = props.className
+  
     return(
-        <svg xmlns="http://www.w3.org/2000/svg" width="76" height="46" viewBox="0 0 76 46" fill="none">
+        <svg className={useClass} xmlns="http://www.w3.org/2000/svg" width="76" height="46" viewBox="0 0 76 46" fill="none">
   <g clipPath="url(#clip0_1_9)">
     <path d="M0 0H2.32086V27.4049H9.25075V0H11.5716V46H9.25075V29.7131H2.32086V46H0V0Z" fill="url(#paint0_linear_1_9)"/>
     <path d="M28.7329 0L22.9798 29.7131V46H20.6589V29.7131L14.8731 0H16.9978L21.8357 24.7717L26.6408 0H28.7329Z" fill="url(#paint1_linear_1_9)"/>
