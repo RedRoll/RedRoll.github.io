@@ -1,5 +1,4 @@
 
-
 const Logo = props => {
 
   const useClass = props.className

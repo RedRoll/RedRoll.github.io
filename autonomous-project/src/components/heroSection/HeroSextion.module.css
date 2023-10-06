@@ -1,0 +1,125 @@
+.hero {
+    width: 100%;
+    display: flex;
+    margin-top: 146px;
+    position: relative;
+    z-index: 1;
+}
+
+.hero__presentation {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    
+}
+
+/* text block */
+.presentation__text {
+    max-width: 456px;
+    z-index: 10;
+}
+
+.presentation__text h1 {
+    white-space: nowrap;
+    color: #FFF;
+    font-family: Montserrat;
+    font-size: 40px;
+    font-weight: 700;
+    margin-bottom: 36px;
+}
+
+.presentation__text span {
+    background: linear-gradient(92deg, #C0B7E8 -1.02%, #8176AF 36.25%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.presentation__text p {
+    color: #FFF;
+    font-family: Montserrat;
+    font-size: 16px;
+    font-weight: 400;
+    margin-bottom: 40px;
+}
+
+.text__interactive {
+    display: flex;
+    align-items: center;
+    column-gap: 11px;
+}
+
+.interactive__arrow {
+    cursor: pointer;
+}
+
+/* end text block */
+
+/* graphic block */
+
+.presentation__graphics {
+    
+    max-width: 737px;
+    top: 170px;
+    right: 0;
+    
+}
+
+.graphics__vector1,
+.graphics__vector2,
+.graphics__vector3 {
+    position: absolute;
+    stroke-width: 6px;
+    stroke: #343045;
+    z-index: -1;
+}
+
+.graphics__vector1 {
+    max-width: 414px;
+    height: 669px;
+    top: 0;
+    right: 0;
+}
+
+.graphics__vector2 {
+    max-width: 377px;
+    height: 845px;
+    top: -316px;
+    right: 143px;
+}
+
+.graphics__vector3 {
+    max-width: 735.029px;
+    height: 419.323px;
+    top: 249px;
+    right: 0;
+}
+
+.graphics__vector3 {
+    width: 735.029px;
+    height: 419.323px;
+}
+
+.graphics__background {
+    border-radius: 100px 100px 100px 240px;
+    background: rgba(0, 0, 0, 0.13);
+    width: 524px;
+    height: 455px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.background__img {
+    width: 485px;
+    height: 419px;
+    border: 1px solid white;
+    border-radius: 100px 100px 100px 240px;
+    background: url(../../graphic/img/hero-img1.jpeg) no-repeat;
+    background-size: 100%;
+    background-position: 0 -60px;
+    
+}
+
+/* end graphiv block */

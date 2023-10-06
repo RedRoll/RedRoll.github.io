@@ -6,14 +6,17 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    
+    z-index: 2;
+    position: relative;
 }
+/* коли один компонент перекриває інший і треба щоб він цього не робив, треба обом компонентам задати position relative (обов'язково!), а потім z-index 1/2 відповідно  */
 
 /* links */
 .header__links {
     flex: 0 1 100%;
     display: flex;
     justify-content: center;
+    
 }
 
 .links__list {
@@ -231,7 +234,9 @@
 
     .hide-item .list__link {
         color: #dd9cf1;;
+        
     }
 }
 
 /* end Media */
+

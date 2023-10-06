@@ -5,7 +5,9 @@ import Button from '../UI/button/Button'
 
 import { useState } from 'react'
 
-const Header = () => {
+const Header = props => {
+
+    const classes = `${styles['main-header']} ${props.className}`
 
     const [isTrue, setIsTrue] = useState(false)
 
@@ -23,13 +25,13 @@ const Header = () => {
     const activateBurger = isTrue ? styles['burger-open'] : null
 
     const activeBurgerStyle = {
-        background: isTrue ? 'linear-gradient(90deg, #ff0000 0%, #00ff00 100%)' : ''
+        background: isTrue ? 'linear-gradient(93deg, rgba(2,0,36,1) 0%, rgba(140,168,191,1) 0%, rgba(125,36,111,1) 100%)' : ''
     }
 
 
     return (
 
-        <div className={styles['main-header']}>
+        <div className={classes}>
 
             <div className={styles.header__logo}>
                 <a className={styles.logo__link} href="/">
