@@ -6,8 +6,8 @@ function App() {
   return (
     <div className='app'>
       <Wrapper>
-        <Header className='test1'/>
-        <HeroSection className='test'/>
+        <Header />
+        <HeroSection />
       </Wrapper>
     </div>
   );

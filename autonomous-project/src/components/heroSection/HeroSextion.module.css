@@ -1,17 +1,18 @@
 .hero {
     width: 100%;
-    display: flex;
-    margin-top: 146px;
+    margin-top: 98px;
     position: relative;
     z-index: 1;
+
 }
 
 .hero__presentation {
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    flex-wrap: nowrap;
-    
+    flex-wrap: wrap-reverse;
+
 }
 
 /* text block */
@@ -54,21 +55,33 @@
     cursor: pointer;
 }
 
+.text__vector4 {
+    width: 238.075px;
+    height: 561px;
+    top: -25px;
+    left: -65px;
+}
+
+
 /* end text block */
 
 /* graphic block */
 
 .presentation__graphics {
-    
     max-width: 737px;
     top: 170px;
     right: 0;
-    
+}
+
+.vectors-main {
+    position: relative;
+    background-color: white;
 }
 
 .graphics__vector1,
 .graphics__vector2,
-.graphics__vector3 {
+.graphics__vector3,
+.text__vector4 {
     position: absolute;
     stroke-width: 6px;
     stroke: #343045;
@@ -78,27 +91,22 @@
 .graphics__vector1 {
     max-width: 414px;
     height: 669px;
-    top: 0;
-    right: 0;
+    top: -120px;
+    right: -110px;
 }
 
 .graphics__vector2 {
     max-width: 377px;
     height: 845px;
-    top: -316px;
-    right: 143px;
+    top: -201px;
+    right: 35px;
 }
 
 .graphics__vector3 {
     max-width: 735.029px;
     height: 419.323px;
-    top: 249px;
-    right: 0;
-}
-
-.graphics__vector3 {
-    width: 735.029px;
-    height: 419.323px;
+    top: 168px;
+    right: -40px;
 }
 
 .graphics__background {
@@ -119,7 +127,18 @@
     background: url(../../graphic/img/hero-img1.jpeg) no-repeat;
     background-size: 100%;
     background-position: 0 -60px;
-    
+
 }
 
-/* end graphiv block */
+/* end graphic block */
+
+/* media */
+
+@media(max-width: 1050px) {
+    .hero__presentation {
+        justify-content: center;
+        row-gap: 60px;
+    }
+}
+
+/* end media */
