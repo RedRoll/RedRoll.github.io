@@ -15,13 +15,12 @@
 .icon1 {
     width: 70px;
     height: 70px;
-    
 }
 
 .icon2 {
     width: 59px;
     height: 59px;
-    
+
 }
 
 .icon3 {
@@ -32,7 +31,31 @@
 /* end icons */
 
 
+/* additional styles for Items */
 .item-border {
-    border-left: 1px  solid rgba(192, 183, 232, 0.33);
+    border-left: 1px solid rgba(192, 183, 232, 0.33);
     border-right: 1px solid rgba(192, 183, 232, 0.33);
 }
+
+/* додаю цей дивний і не потрібний стиль через те що перша svg має не потрібні відступи - illustartor не стану встановлювати, тому зроблю такий костиль */
+.item-padding {
+    padding-right: 20px;
+}
+/* end styles for items */
+
+/* MEDIA */
+@media(max-width: 1200px) {
+    .icon1 {
+        width: 60px;
+        height: 60px;
+    }
+    .icon2 {
+        width: 53px;
+        height: 53px;
+    }
+    .icon3 {
+        width: 59px;
+        height: 59px;
+    }
+}
+/* END MEDIA */

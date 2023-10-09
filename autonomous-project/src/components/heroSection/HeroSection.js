@@ -9,8 +9,11 @@ import Arrow from '../../graphic/svg/Arrow'
 
 import NavBar from './navbar/NavBar'
 
+
+
 const HeroSection = () => {
 
+   
     return (
         <div className={styles.hero}>
             <div className={styles.hero__presentation}>

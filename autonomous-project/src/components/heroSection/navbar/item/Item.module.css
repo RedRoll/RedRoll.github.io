@@ -7,7 +7,6 @@
 }
 
 .text__title {
-    border: 1px;
     font-family: Montserrat;
     font-size: 24px;
     font-weight: 700;
@@ -19,6 +18,17 @@
     font-family: Montserrat;
     font-size: 14px;
     font-weight: 400;
+}
+
+@media(max-width: 1200px) {
+
+    .item {
+        column-gap: 25px;
+    }
+
+    .text__title {
+        font-size: 21px;
+    }
 }
 
 
