@@ -20,7 +20,7 @@ const Header = props => {
         }
     }
 
-    console.log(isTrue)
+
 
     const activateBurger = isTrue ? styles['burger-open'] : null
 

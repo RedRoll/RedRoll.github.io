@@ -13,7 +13,7 @@ import NavBar from './navbar/NavBar'
 
 const HeroSection = () => {
 
-   
+    
     return (
         <div className={styles.hero}>
             <div className={styles.hero__presentation}>
@@ -46,7 +46,9 @@ const HeroSection = () => {
                 </div>
 
             </div>
+
             <NavBar />
+            
         </div>
     )
 }

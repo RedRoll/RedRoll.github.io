@@ -57,5 +57,13 @@
         width: 59px;
         height: 59px;
     }
+
+    
 }
+
+/* @media(max-width: 1080px) {
+    .nav-bar {
+        max-width: 40rem;
+    }
+} */
 /* END MEDIA */
