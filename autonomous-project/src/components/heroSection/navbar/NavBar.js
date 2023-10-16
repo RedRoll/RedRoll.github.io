@@ -66,9 +66,9 @@ const NavBar = () => {
                 mobile ?
                     // mobile UI
                     (<nav className={styles['nav-bar']}>
-                        <PrevButton onClick={prevSlideHadler} />
+                        <PrevButton className={styles['nav-bar__arrow1']} onClick={prevSlideHadler} />
                         <Item data={data[index]} onClick={nextSlideHadler}/>
-                        <NextButton onClick={nextSlideHadler} />
+                        <NextButton className={styles['nav-bar__arrow2']} onClick={nextSlideHadler} />
                     </nav>)
 
                     :

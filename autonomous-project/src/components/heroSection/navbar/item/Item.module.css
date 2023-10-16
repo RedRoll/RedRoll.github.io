@@ -3,7 +3,7 @@
     display: flex;
     column-gap: 30px;
     justify-content: center;
-    padding: 25px 0;
+    padding: 23px 0;
 }
 
 .text__title {
@@ -28,6 +28,23 @@
 
     .text__title {
         font-size: 21px;
+    }
+}
+
+@media(max-width: 520px) {
+    .item {
+        column-gap: 10px;
+        align-items: center;
+    }
+
+    .text__title {
+        display: none;
+    }
+} 
+
+@media(max-width: 376px) {
+    .text__info {
+        display: none;
     }
 }
 

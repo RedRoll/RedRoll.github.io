@@ -3,7 +3,6 @@
     margin-top: 98px;
     position: relative;
     z-index: 1;
-
 }
 
 .hero__presentation {
@@ -12,17 +11,26 @@
     align-items: center;
     justify-content: space-between;
     flex-wrap: wrap-reverse;
-
+    column-gap: 50px;
 }
 
 /* text block */
 .presentation__text {
     max-width: 456px;
     z-index: 10;
+    position: relative;
 }
 
 .presentation__text h1 {
     white-space: nowrap;
+    color: #FFF;
+    font-family: Montserrat;
+    font-size: 46px;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+.presentation__text h2 {
     color: #FFF;
     font-family: Montserrat;
     font-size: 40px;
@@ -52,7 +60,15 @@
 }
 
 .interactive__arrow {
+    transition: all ease .2s;
     cursor: pointer;
+}
+
+.interactive__button {
+    border: none;
+    color: #343045;
+    background: linear-gradient(90deg, #8176AF 0%, #C0B7E8 100%);
+    transition: color ease .3s;
 }
 
 .text__vector4 {
@@ -62,20 +78,45 @@
     left: -65px;
 }
 
+/* animations */
+
+.interactive__button:hover {
+    background: linear-gradient(90deg, #8270c7 0%, #776ca8 100%);
+    color: white;
+
+}
+
+.interactive__arrow.clicked-arrow {
+    transform: translate(30px)  ;
+    
+    transition: transform ease .5s;
+}
+
+/* end animations */
 
 /* end text block */
 
 /* graphic block */
-
 .presentation__graphics {
-    max-width: 737px;
-    top: 170px;
-    right: 0;
+    flex: 0 1 524px;
+    /* можна також flex: 0 1 524px - буде те саме */
+    position: relative;/*relative для векторів - в них absolute*/
+    
 }
 
-.vectors-main {
+.graphics__box {
+    position: relative;/*relative для векторів - в них absolute*/
+}
+
+.background__img {
     position: relative;
-    background-color: white;
+    max-height: 490px;
+    display: block;
+    border-radius: 100px 100px 100px 240px;
+    width: 100%;
+    object-fit: cover;
+    object-position: top -50px right 0;
+    border: 22px solid rgba(0, 0, 0, 0.13);
 }
 
 .graphics__vector1,
@@ -109,36 +150,104 @@
     right: -40px;
 }
 
-.graphics__background {
-    border-radius: 100px 100px 100px 240px;
-    background: rgba(0, 0, 0, 0.13);
-    width: 524px;
-    height: 455px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.background__img {
-    width: 485px;
-    height: 419px;
-    border: 1px solid white;
-    border-radius: 100px 100px 100px 240px;
-    background: url(../../graphic/img/hero-img1.jpeg) no-repeat;
-    background-size: 100%;
-    background-position: 0 -60px;
-
-}
-
 /* end graphic block */
 
 /* media */
 
-@media(max-width: 1050px) {
+@media(max-width: 1089px) {
     .hero__presentation {
         justify-content: center;
         row-gap: 60px;
     }
+}
+
+@media(max-width: 570px) {
+
+    .hero {
+        margin-top: 48px;
+        text-align: center;
+    }
+
+    .presentation__text h1,
+    .presentation__text h2 {
+        font-size: 24px;
+    }
+
+    .presentation__text h1 span,
+    .presentation__text h2 span {
+        font-size: 36px;
+    }
+
+    .text__vector4, .presentation__text p, .interactive__arrow {
+        display: none;
+    }
+
+    /* vectors */
+    .graphics__vector1 {
+        /* width: 347px;
+        height: 562px; */
+        width: 100%;
+        height: auto;
+        
+    }
+
+    .graphics__vector2 {
+        /* width: 316px;
+        height: 709px; */
+        width: 100%;
+        height: auto;
+    }
+
+    .graphics__vector3 {
+        /* width: 617px;
+        height: 352px; */
+        width: 100%;
+        height: auto;
+    }
+
+    .interactive__button {
+        width: 100%;
+        height: auto;
+    }
+
+    /* end vectors */
+}
+
+@media(max-width: 520px) {
+    .background__img {
+        height: 370px;
+        border: 10px solid rgba(0, 0, 0, 0.13);
+        
+    }
+}
+
+@media(max-width: 400px) {
+    .background__img {
+        height: 310px;
+        object-position: top -30px right 0;
+    }
+    .hero__presentation {
+        row-gap: 30px;
+    }
+}
+
+@media(max-width: 342px) {
+    .presentation__text h1 span, .presentation__text h2 span {
+        font-size: 30px;
+    }
+    .interactive__button {
+        margin: 0 5px;
+    }
+}
+
+@media (max-width: 330px) {
+    .background__img {
+        object-position: top -15px right 0;
+        height: 280px;
+        max-width: 318px;
+        border: 10px solid rgba(0, 0, 0, 0.13);
+    }
+    
 }
 
 /* end media */
