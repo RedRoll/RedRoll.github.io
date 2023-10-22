@@ -1,13 +1,13 @@
 import styles from './Navbar.module.css'
 import { useState, useEffect } from 'react'
 
+
 import Icon1 from '../../../graphic/svg/heroSection-vector/heroIcons/Icon1'
 import Icon2 from '../../../graphic/svg/heroSection-vector/heroIcons/Icon2'
 import Icon3 from '../../../graphic/svg/heroSection-vector/heroIcons/Icon3'
 
 import Item from './item/Item'
-import PrevButton from '../../../graphic/svg/heroSection-vector/navArrows/PrevButton'
-import NextButton from '../../../graphic/svg/heroSection-vector/navArrows/NextButon'
+import MobileNavBar from './mobileNavBar/MobileNavBar'
 
 const data = [
     {
@@ -30,12 +30,14 @@ const data = [
     }
 ]
 
+
+
 const NavBar = () => {
 
-    const [index, setIndex] = useState(1)
+
     const [mobile, setMobile] = useState(window.innerWidth <= 1080)
 
-    
+
 
     useEffect(() => {
         const resizeHandler = () => {
@@ -50,33 +52,14 @@ const NavBar = () => {
             window.removeEventListener('resize', resizeHandler)
         }
 
-    }, []) // пустий массив, як другий аргумент useEffect означає що хук useEffect запуститься/спрацює тільки раз при візуалізації компоненту
+    }, [mobile]) // пустий массив, як другий аргумент useEffect означає що хук useEffect запуститься/спрацює тільки раз при візуалізації компоненту
 
-    const nextSlideHadler = () => {
-        setIndex(prevIndex => prevIndex === data.length - 1 ? 0 : prevIndex + 1)
-    }
-    const prevSlideHadler = () => {
-        setIndex(prevIndex => prevIndex === 0 ? data.length - 1 : prevIndex - 1)
-    }
+
 
     return (
         <div>
-
-            {
-                mobile ?
-                    // mobile UI
-                    (<nav className={styles['nav-bar']}>
-                        <PrevButton className={styles['nav-bar__arrow1']} onClick={prevSlideHadler} />
-                        <Item data={data[index]} onClick={nextSlideHadler}/>
-                        <NextButton className={styles['nav-bar__arrow2']} onClick={nextSlideHadler} />
-                    </nav>)
-
-                    :
-                    // desktop UI
-                    (<nav className={styles['nav-bar']}>
-                        {data.map((item, index) => <Item key={index} className={`${index === 1 ? styles['item-border'] : ''} ${index === 2 ? styles['item-padding'] : ''}`} data={item} />)}
-                    </nav>)
-            }
+            <MobileNavBar data={data} />
+            {/* тестовий сетап. Після тесту cssTransition повернути 2 стани (desktop/mobile) */}
 
         </div>
 
@@ -84,3 +67,4 @@ const NavBar = () => {
 }
 
 export default NavBar
+

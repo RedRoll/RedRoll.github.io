@@ -5,15 +5,15 @@ import Button from '../UI/button/Button'
 
 import { useState, useEffect, useRef } from 'react'
 
-const Header = props => {
+const Header = () => {
 
 
 
     const [isTrue, setIsTrue] = useState(false)
 
-    console.log(isTrue)
 
-    // function for clicks outside of the burger area
+
+    // function for clicks outside of the burger menu
 
     const burgerRef = useRef(null)
     const menuRef = useRef(null)
@@ -21,9 +21,9 @@ const Header = props => {
 
     useEffect(() => {
 
-        console.log(burgerRef.current, menuRef.current)
         const clickHandlerOutside = e => {
             if (!isTrue) return
+            // якщо не вказати умову вище, код в useEffect (useEffect буде cлухати івент весь час) буде спрацьовувати навіть тоді коли це не потрібно, а саме коли меню закрите (коли загальний стан - false)
             if (burgerRef.current && menuRef.current) {
                 if (!menuRef.current.contains(e.target) && !burgerRef.current.contains(e.target)) {
                     setIsTrue(false)
@@ -32,17 +32,14 @@ const Header = props => {
             }
         }
 
-        document.addEventListener('click', clickHandlerOutside, console.log('mounted'))
-        return () => {
-            document.removeEventListener('click', clickHandlerOutside, console.log('unmounted'))
-        }
-    }, [isTrue])
-    // window.addEventListener('click', e => {
+        document.addEventListener('click', clickHandlerOutside)
 
-    //     if(e.target !== menuRef.current && e.target !== burgerRef.current) {
-    //         setIsTrue(false)
-    //     }
-    // })
+        return () => {
+            document.removeEventListener('click', clickHandlerOutside)
+        }
+
+    }, [isTrue]) // в квадратних дужках пишеться залежність - useEffect буде спрацьовувати, коли змінна isTrue зміниться (наприклад стане true). Тоді запуститься функція в тілі useEffect
+    // Якщо не вказати залежність то useEffect буде запускатись при кожному ре-рендері, це всеодно, що просто прописати функцію тут, в цьому місці, вона і так буде запускатись після кожного нового рендеру.
 
     // end function
 
@@ -88,6 +85,7 @@ const Header = props => {
                         <li><a className={styles.list__link} href='#'>Technologies</a></li>
                         <li><a className={styles.list__link} href='#'>How to</a></li>
                         <li className={styles['hide-item']}><a className={styles.list__link} href='#'>Contact us</a></li>
+                        {/* Варнінг тут, бо не корректно вказана адреса посилання */}
                     </ul>
                 </div>
 

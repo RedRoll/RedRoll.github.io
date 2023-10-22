@@ -241,7 +241,8 @@
         row-gap: 10px;
         font-size: 25px;
         padding: 140px 20px 30px 20px;
-        width: 100%;
+        width: 80%;
+        height: auto;
     }
 
     .header__hidden-burger-menu {
