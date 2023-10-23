@@ -2,12 +2,17 @@ import styles from './Navbar.module.css'
 import { useState, useEffect } from 'react'
 
 
+
 import Icon1 from '../../../graphic/svg/heroSection-vector/heroIcons/Icon1'
 import Icon2 from '../../../graphic/svg/heroSection-vector/heroIcons/Icon2'
 import Icon3 from '../../../graphic/svg/heroSection-vector/heroIcons/Icon3'
 
+
+
 import Item from './item/Item'
-import MobileNavBar from './mobileNavBar/MobileNavBar'
+import MobileNav from './mobileNav/MobileNav'
+
+
 
 const data = [
     {
@@ -44,7 +49,7 @@ const NavBar = () => {
             setMobile(window.innerWidth <= 1080)
             // функція, яка робить update state - mobile
         }
-
+        console.log(mobile)
         window.addEventListener('resize', resizeHandler)
         // частина написана нижче потрібна(тобто спрацює вона тільки тоді), коли компонент буде забраний з DOM (коли він буде unmounted) - тоді listener буде прибраний (більше не буде слухати подію), це робиться для оптимізації і економії ресурсів пк
 
@@ -54,15 +59,18 @@ const NavBar = () => {
 
     }, [mobile]) // пустий массив, як другий аргумент useEffect означає що хук useEffect запуститься/спрацює тільки раз при візуалізації компоненту
 
-
+ 
 
     return (
-        <div>
-            <MobileNavBar data={data} />
-            {/* тестовий сетап. Після тесту cssTransition повернути 2 стани (desktop/mobile) */}
+        <nav className={styles['nav-bar']}>
+            {
+            mobile ? 
+            <MobileNav data={data} /> 
+            :
+            data.map( (item, index) => <Item key={index} className={index === 1 ? styles['item-border'] : ''} data={item} />)
 
-        </div>
-
+            }
+        </nav>
     )
 }
 

@@ -2,7 +2,7 @@ import styles from './Item.module.css'
 
 const Item = props => {
 
-    const classes = `${styles.item} ${props.style}`
+    const classes = `${styles.item} ${props.className}`
 
     return (
         <div className={classes}>

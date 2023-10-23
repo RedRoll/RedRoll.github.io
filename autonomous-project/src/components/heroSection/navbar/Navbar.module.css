@@ -13,19 +13,19 @@
 
 /* icons */
 .icon1 {
-    width: 72px;
-    height: 72px;
+    width: 63px;
+    height: 63px;
 }
 
 .icon2 {
-    width: 59px;
-    height: 59px;
+    width: 63px;
+    height: 63px;
 
 }
 
 .icon3 {
-    width: 65px;
-    height: 65px;
+    width: 63px;
+    height: 63px;
 }
 
 /* end icons */
@@ -46,7 +46,7 @@
 
 
 /* MEDIA */
-@media(max-width: 1200px) {
+/* @media(max-width: 1200px) {
     .icon1 {
         width: 60px;
         height: 60px;
@@ -58,12 +58,12 @@
     }
 
     .icon3 {
-        width: 59px;
-        height: 59px;
+        width: 50px;
+        height: 50px;
     }
 
 
-}
+} */
 
 @media(max-width: 1080px) {
     .nav-bar {
@@ -71,15 +71,11 @@
     }
 }
 
-@media(max-width: 500px) {
-    .nav-bar__arrow1 {
-        margin-left: 5px;
-    }
-    .nav-bar__arrow2 {
-        margin-right: 5px;
+@media(max-width: 499px) {
+    .icon1 {
+        margin-right: 19px;
     }
 }
-
 
 
 /* END MEDIA */
