@@ -1,7 +1,7 @@
 import styles from './HeroSextion.module.css'
 import { useState } from 'react'
 import Button from '../UI/button/Button'
-import imgGirl from '../../graphic/img/hero-img1.jpeg'
+import imgGirl from '../../graphic/img/hero-img1_1.jpeg'
 
 import Vector1 from '../../graphic/svg/heroSection-vector/Vector1'
 import Vector2 from '../../graphic/svg/heroSection-vector/Vector2'

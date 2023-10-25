@@ -17,7 +17,8 @@ const Header = () => {
 
     const burgerRef = useRef(null)
     const menuRef = useRef(null)
-
+ 
+    const toggleClass = styles['no-scrollPage']
 
     useEffect(() => {
 
@@ -27,6 +28,7 @@ const Header = () => {
             if (burgerRef.current && menuRef.current) {
                 if (!menuRef.current.contains(e.target) && !burgerRef.current.contains(e.target)) {
                     setIsTrue(false)
+                    document.body.classList.remove(toggleClass)
                     console.log(!burgerRef.current.contains(e.target))
                 }
             }
@@ -38,12 +40,12 @@ const Header = () => {
             document.removeEventListener('click', clickHandlerOutside)
         }
 
-    }, [isTrue]) // в квадратних дужках пишеться залежність - useEffect буде спрацьовувати, коли змінна isTrue зміниться (наприклад стане true). Тоді запуститься функція в тілі useEffect
+    }, [isTrue, toggleClass]) // в квадратних дужках пишеться залежність - useEffect буде спрацьовувати, коли змінна isTrue зміниться (наприклад стане true). Тоді запуститься функція в тілі useEffect
     // Якщо не вказати залежність то useEffect буде запускатись при кожному ре-рендері, це всеодно, що просто прописати функцію тут, в цьому місці, вона і так буде запускатись після кожного нового рендеру.
 
     // end function
 
-    const toggleClass = styles['no-scrollPage']
+    
 
     const clickHandler = () => {
         if (!isTrue) {
@@ -79,7 +81,7 @@ const Header = () => {
                 <div className={styles.header__links} >
 
                     <ul className={styles.links__list} ref={menuRef}>
-                        <li className={styles['hide-item']}><a onClick={event => event.preventDefault()} className={styles.list__link} href='/'>Join Hydra</a></li>
+                        <li className={styles['hide-item']}><a className={styles.list__link} href='#'>Join Hydra</a></li>
                         <li><a className={styles.list__link} href='#'>About</a></li>
                         <li><a className={styles.list__link} href='#'>Services</a></li>
                         <li><a className={styles.list__link} href='#'>Technologies</a></li>
