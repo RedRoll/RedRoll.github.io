@@ -104,9 +104,6 @@
     
 }
 
-.graphics__box {
-    position: relative;/*relative для векторів - в них absolute*/
-}
 
 .background__img {
     position: relative;

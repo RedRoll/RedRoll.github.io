@@ -1,0 +1,9 @@
+.arrow {
+    display: flex;
+    align-items: center;
+}
+
+
+.arrowEnd__item {
+    transform: translateX(-50% );
+}

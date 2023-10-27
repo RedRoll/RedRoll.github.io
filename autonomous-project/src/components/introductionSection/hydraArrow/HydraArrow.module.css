@@ -1,0 +1,35 @@
+.hydraArrow {
+    display: flex;
+    flex-direction: column;
+    row-gap: 5px;
+}
+
+
+.hydraArrow__title {
+    color: #FFF;
+    font-family: Montserrat;
+    font-size: 36px;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.hydraArrow__arrow {
+    max-height: 45px;
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    column-gap: 27px;
+}
+
+.hydraArrow__arrow:hover {
+    color: red;
+}
+
+.arrow__title1 {
+    color: #FFF;
+    font-family: Montserrat;
+    font-size: 36px;
+    text-transform: uppercase;
+    font-weight: 300;
+}
+

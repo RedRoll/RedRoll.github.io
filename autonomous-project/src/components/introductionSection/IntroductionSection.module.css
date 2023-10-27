@@ -1,0 +1,86 @@
+.main-introduction {
+    z-index: 10;
+    
+}
+
+.introduction__topSection {
+    display: flex;
+  
+    align-items: center;
+    justify-content: space-between;
+}
+
+.topSection__description {
+    max-width: 652px;
+}
+
+.description__text {
+    color: #FFF;
+    font-family: Montserrat;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+
+/* middle section */
+.introduction__middleSection {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+}
+
+.middleSection__picture {
+    flex: 0 1 524px;
+}
+
+.picture__img-man {
+    border-radius: 240px 100px;
+    display: block;
+    width: 100%;
+    max-height: 557px;
+    z-index: 10;
+    position: relative; /*для того, щоб вектори були під контентом, по іншому не працює поки*/
+}
+
+/* vectors */
+
+.middleSection__vector1,
+.middleSection__vector2 {
+    position: absolute;
+    top: 0;
+    z-index: 1;
+    stroke-width: 6px;
+    stroke: #343045;
+}
+
+.middleSection__vector1 {
+    
+    max-width: 1449px;
+    height: 256.676px;
+}
+
+.middleSection__vector2 {
+    
+    max-width: 1445px;
+    height: 211.75px;
+}
+
+.middleSection__information {
+    position: relative;
+    z-index: 10;
+    max-width: 630px;
+}
+
+/* end vectors */
+
+/* end middle section */
+
+/* MEDIA */
+
+/* @media(max-width: 1000px) {
+    .middleSection__vector1, .middleSection__vector2 {
+        width: 100%;
+    }
+} */
+
+/* MEDIA END */
