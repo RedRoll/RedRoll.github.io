@@ -1,7 +1,7 @@
 .hydraArrow {
     display: flex;
-    flex-direction: column;
-    row-gap: 5px;
+    align-items: top;
+    justify-content: space-between;
 }
 
 
@@ -21,9 +21,7 @@
     column-gap: 27px;
 }
 
-.hydraArrow__arrow:hover {
-    color: red;
-}
+
 
 .arrow__title1 {
     color: #FFF;
@@ -33,3 +31,17 @@
     font-weight: 300;
 }
 
+/* rightSide */
+
+.hydraArrow__rightSide {
+    max-width: 652px;
+}
+
+.rightSide__text {
+    color: #FFF;
+    font-family: Montserrat;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+/* end RightSide */

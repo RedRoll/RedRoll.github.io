@@ -1,46 +1,98 @@
 .main-introduction {
     z-index: 10;
-    
+
 }
 
-.introduction__topSection {
-    display: flex;
-  
-    align-items: center;
-    justify-content: space-between;
+/* header */
+
+.introduction__header {
+    margin-bottom: 104px;
 }
 
-.topSection__description {
-    max-width: 652px;
-}
-
-.description__text {
-    color: #FFF;
-    font-family: Montserrat;
-    font-size: 16px;
-    font-weight: 400;
-}
-
+/* end header */
 
 /* middle section */
+
+
 .introduction__middleSection {
     position: relative;
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    column-gap: 50px;
 }
 
 .middleSection__picture {
-    flex: 0 1 524px;
+    flex: 0 0 524px;
 }
 
 .picture__img-man {
     border-radius: 240px 100px;
     display: block;
+    max-width: 524px;
     width: 100%;
     max-height: 557px;
     z-index: 10;
-    position: relative; /*для того, щоб вектори були під контентом, по іншому не працює поки*/
+    position: relative;
+    /*для того, щоб вектори були під контентом, по іншому не працює поки*/
+    object-fit: cover;
 }
+
+/* text */
+
+.middleSection__information {
+    z-index: 10;
+    max-width: 630px;
+}
+
+.title__top {
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+.title__bottom {
+    font-weight: 300;
+    margin-bottom: 42px;
+}
+
+.title__top,
+.title__bottom {
+    color: #FFF;
+    font-family: Montserrat;
+    font-size: 36px;
+    text-transform: uppercase;
+}
+
+.information__text {
+    color: #FFF;
+    font-family: Montserrat;
+    font-size: 16px;
+    font-weight: 400;
+    margin-bottom: 28px;
+}
+
+.information__button {
+    color: black;
+    border: none;
+    background: linear-gradient(90deg, #8176AF 0%, #C0B7E8 100%);
+    transition: all .3s ease;
+}
+
+.information__button:hover {
+    background: linear-gradient(90deg, #8270c7 0%, #776ca8 100%);
+    color: white;
+}
+
+/* end text */
+
+/* footer */
+
+.introduction__footer {
+    margin-top: 111px;
+}
+
+/* end footer */
 
 /* vectors */
 
@@ -54,22 +106,18 @@
 }
 
 .middleSection__vector1 {
-    
     max-width: 1449px;
     height: 256.676px;
+    top: 16px;
 }
 
 .middleSection__vector2 {
-    
     max-width: 1445px;
     height: 211.75px;
+    top: 301px;
 }
 
-.middleSection__information {
-    position: relative;
-    z-index: 10;
-    max-width: 630px;
-}
+
 
 /* end vectors */
 
@@ -77,10 +125,8 @@
 
 /* MEDIA */
 
-/* @media(max-width: 1000px) {
-    .middleSection__vector1, .middleSection__vector2 {
-        width: 100%;
-    }
-} */
+@media(max-width: 1120px) {
+   
+}
 
 /* MEDIA END */

@@ -5,6 +5,7 @@ import HydraArrow from './hydraArrow/HydraArrow'
 import VRMan from '../../graphic/img/man_introduction.png'
 import Vector1Introduction from '../../graphic/svg/introductionSection-vector/vectors/Vector1'
 import Vector2Introduction from '../../graphic/svg/introductionSection-vector/vectors/Vecto2'
+import Button from '../UI/button/Button'
 
 const data = [
     {
@@ -21,15 +22,7 @@ const IntroductionSection = () => {
     return (
         <div className={styles['main-introduction']}>
 
-            <div className={styles.introduction__topSection}>
-
-                <HydraArrow data={data[0]} />
-
-                <div className={styles.topSection__description}>
-                    <p className={styles.description__text}>Vitae sapien pellentesque habitant morbi tristique senectus et netus et. Feugiat nibh sed pulvinar proin gravida hendrerit lectus. Mi sit amet mauris commodo quis imperdiet massa tincidunt nunc. Viverra aliquet eget sit amet tellus. Ornare lectus sit amet est placerat in. Lectus magna fringilla urna porttitor rhoncus vitae.</p>
-                </div>
-
-            </div>
+            <HydraArrow className={styles.introduction__header} data={data[0]} />
 
             <div className={styles.introduction__middleSection}>
 
@@ -45,8 +38,8 @@ const IntroductionSection = () => {
                 <div className={styles.middleSection__information}>
 
                     <div className={styles.information__title}>
-                        <h2>About</h2>
-                        <h3>Hydra VR</h3>
+                        <h2 className={styles.title__top}>About</h2>
+                        <h3 className={styles.title__bottom}>Hydra VR</h3>
                     </div>
 
                     <div className={styles.information__text}>
@@ -61,11 +54,15 @@ const IntroductionSection = () => {
                             n tempor.</p>
                     </div>
 
+                    <Button className={styles.information__button}>Let`s get in touch</Button>
+
                 </div>
+
+                
 
             </div>
 
-            <div className={styles.introduction__bottomSection}></div>
+            <HydraArrow className={styles.introduction__footer} data={data[1]} />
         </div>
     )
 }

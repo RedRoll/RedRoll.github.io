@@ -15,7 +15,7 @@
 }
 
 /* text block */
-.presentation__text {
+.inner__presentation__text {
     max-width: 456px;
     z-index: 10;
     position: relative;
@@ -45,7 +45,7 @@
     -webkit-text-fill-color: transparent;
 }
 
-.presentation__text p {
+.inner__presentation__text p {
     color: #FFF;
     font-family: Montserrat;
     font-size: 16px;
@@ -99,7 +99,6 @@
 /* graphic block */
 .presentation__graphics {
     flex: 0 1 524px;
-    /* можна також flex: 0 1 524px - буде те саме */
     position: relative;/*relative для векторів - в них absolute*/
     
 }
@@ -151,11 +150,28 @@
 
 /* media */
 
-@media(max-width: 1089px) {
+@media(max-width: 1120px) {
     .hero__presentation {
         justify-content: center;
         row-gap: 60px;
     }
+
+   .text__info {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+   }
+
+   .inner__presentation__text p {
+    margin-bottom: 0;
+   }
+
+    .presentation__text h1, .presentation__text h2 {
+        text-align: center;
+    }
+    .text__vector4 {
+        display: none;
+    } 
 }
 
 @media(max-width: 570px) {
@@ -175,7 +191,7 @@
         font-size: 36px;
     }
 
-    .text__vector4, .presentation__text p, .interactive__arrow {
+    .presentation__text p, .interactive__arrow {
         display: none;
     }
 
