@@ -1,11 +1,11 @@
 import styles from './BigArrow.module.css'
 
-const BigArrow = () => {
+const BigArrow = props => {
 
-
+    const classes = `${props.className} ${styles.arrow}`
 
     return (
-        <div className={styles.arrow}>
+        <div className={classes}>
             <svg xmlns="http://www.w3.org/2000/svg" width="185" height="4" viewBox="0 0 158 4" fill="none">
                 <path d="M157.5 2H0" stroke="#C0B7E8" strokeWidth="3" />
             </svg>

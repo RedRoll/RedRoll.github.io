@@ -45,3 +45,31 @@
 }
 
 /* end RightSide */
+
+/* media */
+@media(max-width: 1120px) {
+    .hydraArrow__rightSide {
+        max-width: 100%;
+    }
+}
+
+@media(max-width: 520px) {
+    .arrow__item {
+        display: none;
+    }
+
+    .hydraArrow {
+        text-align: center;
+    }
+
+    .arrow__title1 {
+        width: 100%; /*для того, щоб прибрати flex-відступ (бо після видалення сусіднього елементу не можу центровати текст)*/
+    }
+}
+
+@media(max-width: 400px) {
+    .hydraArrow__rightSide {
+        display: none;
+    }
+}
+/* end media */

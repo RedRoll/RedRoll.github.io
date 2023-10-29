@@ -13,7 +13,7 @@ const HydraArrow = props => {
                 <h1 className={styles.hydraArrow__title}>{props.data.title}</h1>
                 <div className={styles.hydraArrow__arrow}>
                     <h2 className={styles.arrow__title1}>{props.data.title2}</h2>
-                    <BigArrow />
+                    <BigArrow className={styles.arrow__item}/>
                 </div>
             </div>
 

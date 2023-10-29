@@ -160,6 +160,7 @@
     display: flex;
     flex-direction: row-reverse;
     align-items: center;
+    column-gap: 40px;
    }
 
    .inner__presentation__text p {
@@ -241,6 +242,10 @@
     }
     .hero__presentation {
         row-gap: 30px;
+    }
+
+    .interactive__button {
+        width: 100%;
     }
 }
 

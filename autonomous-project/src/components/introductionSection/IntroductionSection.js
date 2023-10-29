@@ -26,11 +26,11 @@ const IntroductionSection = () => {
 
             <div className={styles.introduction__middleSection}>
 
-                <div className={styles.middleSection__picture}>
+                
 
                     <img src={VRMan} alt="VR-man" className={styles['picture__img-man']} />
 
-                </div>
+                
 
                 <Vector1Introduction className={styles.middleSection__vector1} />
                 <Vector2Introduction className={styles.middleSection__vector2} />
