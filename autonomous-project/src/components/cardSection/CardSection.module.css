@@ -1,0 +1,6 @@
+.card-section {
+    
+    margin: 110px 0;
+    display: flex;
+    column-gap: 11px;
+}

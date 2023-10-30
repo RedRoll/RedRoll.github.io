@@ -1,0 +1,41 @@
+.card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 40px;
+    background: radial-gradient(50% 50% at 50% 50%, #433D60 0%, #211E2E 100%);
+}
+
+.card__img {
+    border: 18px solid rgba(14, 14, 14, 0.32);
+    border-radius: 50%;
+    margin: 23px 45px 21px;
+}
+
+.card__title {
+    color: #FFF;
+    text-transform: uppercase;
+    font-family: Montserrat;
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.card__description {
+    color: #FFF;
+    font-family: Montserrat;
+    font-size: 12px;
+    font-weight: 400;
+}
+
+.card__button {
+    padding: 17px 39px;
+    background: linear-gradient(90deg, #8176AF 0%, #C0B7E8 100%);
+    border: none;
+    color: #343045;
+    transition: all .3s ease;
+}
+
+.card__button:hover {
+    background: linear-gradient(90deg, #8270c7 0%, #776ca8 100%);
+    color: white;
+}

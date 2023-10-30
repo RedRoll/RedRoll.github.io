@@ -51,16 +51,14 @@
     .hydraArrow__rightSide {
         max-width: 100%;
     }
+
 }
 
 @media(max-width: 520px) {
-    .arrow__item {
-        display: none;
-    }
-
-    .hydraArrow {
+    .hydraArrow__leftSide {
         text-align: center;
     }
+
 
     .arrow__title1 {
         width: 100%; /*для того, щоб прибрати flex-відступ (бо після видалення сусіднього елементу не можу центровати текст)*/
@@ -70,6 +68,12 @@
 @media(max-width: 400px) {
     .hydraArrow__rightSide {
         display: none;
+    }
+}
+
+@media(max-width: 342px) {
+    .hydraArrow__title, .hydraArrow__title1 {
+        font-size: 30px;
     }
 }
 /* end media */

@@ -163,6 +163,8 @@
     column-gap: 40px;
    }
 
+   
+
    .inner__presentation__text p {
     margin-bottom: 0;
    }
@@ -244,18 +246,27 @@
         row-gap: 30px;
     }
 
-    .interactive__button {
+    .text__info {
+        column-gap: 0;
+        
+    }
+
+    .presentation__text {
+        width: 100%;
+       }
+
+    .text__interactive {
+        flex: 1 1 auto;
         width: 100%;
     }
+
 }
 
 @media(max-width: 342px) {
     .presentation__text h1 span, .presentation__text h2 span {
         font-size: 30px;
     }
-    .interactive__button {
-        margin: 0 5px;
-    }
+    
 }
 
 @media (max-width: 330px) {
