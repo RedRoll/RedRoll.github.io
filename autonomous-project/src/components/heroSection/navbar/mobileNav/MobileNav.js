@@ -38,7 +38,6 @@ const MobileNav = props => {
             <div className='slide-wrapper'>
                 <TransitionGroup childFactory={childFactory(dynamicClass)}>
                     <CSSTransition key={props.data[index].title} timeout={1000} classNames={dynamicClass}>
-                        {/* <h1 >{props.data[index].title}</h1> */}
                         <Item data={props.data[index]} />
                     </CSSTransition>
                     {/* csstransition не реагує зміну index, але якщо додати title (до index) props.data[index].title, тоді починає спрацьовувати (поки що не знаю чому так, наразі працює так) */}

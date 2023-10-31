@@ -1,6 +1,25 @@
+
+
 .card-section {
-    
     margin: 110px 0;
+    display: flex;
+    align-items: center;
+    column-gap: 11px;
+}
+
+.section_1, .section_2 {
     display: flex;
     column-gap: 11px;
 }
+
+@media(max-width: 1120px) {
+    .card-section {
+        flex-wrap: wrap;
+        justify-content: center;
+        row-gap: 11px;
+    }
+}
+
+/* @media(max-width: 520px) {
+
+} */
