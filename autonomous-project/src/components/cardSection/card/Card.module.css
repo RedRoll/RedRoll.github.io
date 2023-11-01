@@ -5,6 +5,7 @@
     border-radius: 40px;
     background: radial-gradient(50% 50% at 50% 50%, #433D60 0%, #211E2E 100%);
     max-width: 310px;
+    width: 100%;
 }
 
 .card__img {
@@ -48,4 +49,14 @@
 .card__button:hover {
     background: linear-gradient(90deg, #8270c7 0%, #776ca8 100%);
     color: white;
+}
+
+@media(max-width: 599px) {
+    .card {
+        
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate( -50%, -50%);
+    }
 }

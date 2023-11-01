@@ -53,25 +53,23 @@ const CardSection = () => {
 
 
     return (
-        <div className={styles['card-section']}>
-            {
-                mobile ?
+        <div> {
+            mobile ?
 
-                    <CardMobile data={data}/>
+                <CardMobile data={data} />
 
-                    :
+                :
 
-                    <div className={styles['card-section']}>
-                        < div className={styles.section_1} >
-                            {firstSection.map(item => <Card key={item.img} data={item} />)}
-                        </div >
-                        <div className={styles.section_2}>
-                            {secondSection.map(item => <Card key={item.img} data={item} />)}
-                        </div>
+                <div className={styles['card-section']}>
+                    <div className={styles.section_1} >
+                        {firstSection.map(item => <Card key={item.img} data={item} />)}
+                    </div >
+                    <div className={styles.section_2}>
+                        {secondSection.map(item => <Card key={item.img} data={item} />)}
                     </div>
+                </div>
 
-            }
-        </div>
+        }</div>
     )
 }
 
