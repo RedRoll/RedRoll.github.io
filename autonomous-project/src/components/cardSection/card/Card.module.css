@@ -6,6 +6,7 @@
     background: radial-gradient(50% 50% at 50% 50%, #433D60 0%, #211E2E 100%);
     max-width: 310px;
     width: 100%;
+    z-index: 2; /*для мобідьної версії (щоб правильно відображались кнопки)*/
 }
 
 .card__img {
@@ -44,6 +45,8 @@
     color: #343045;
     transition: all .3s ease;
     margin-bottom: 40px;
+    z-index: 100;
+    position: relative;
 }
 
 .card__button:hover {

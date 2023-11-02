@@ -18,7 +18,7 @@
 .inner__presentation__text {
     max-width: 456px;
     z-index: 10;
-    position: relative;
+    /* position: relative; */
 }
 
 .presentation__text h1 {
