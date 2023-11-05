@@ -49,7 +49,6 @@ const NavBar = () => {
             setMobile(window.innerWidth <= 1080)
             // функція, яка робить update state - mobile
         }
-        console.log(mobile)
         window.addEventListener('resize', resizeHandler)
         // частина написана нижче потрібна(тобто спрацює вона тільки тоді), коли компонент буде забраний з DOM (коли він буде unmounted) - тоді listener буде прибраний (більше не буде слухати подію), це робиться для оптимізації і економії ресурсів пк
 
