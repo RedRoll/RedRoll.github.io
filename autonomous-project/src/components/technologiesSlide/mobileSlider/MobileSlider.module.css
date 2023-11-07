@@ -5,6 +5,7 @@
     display: flex;
     /* overflow-y: hidden;  якщо тут цю властивість то при звуженні viweport відступи body (прописані margin для загального wrapper) будуть перекривати/наїжати поверх кнопки перемикання*/
     margin: 70px 0px;
+    
 }
 
 .slider__wrapper {
@@ -69,6 +70,12 @@
 
 .nextBut__child {
     transform: rotate(-135deg);
+}
+
+.slideFix {
+    object-position: 0 10px;   
+    height: 150px;
+    width: 150px;
 }
 
 /* transition next */

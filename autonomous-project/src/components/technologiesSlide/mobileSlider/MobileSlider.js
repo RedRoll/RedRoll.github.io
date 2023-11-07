@@ -9,6 +9,8 @@ const MobileSlider = props => {
 
     const [index, setIndex] = useState(0)
 
+
+    // css transition classes
     const nextClasses = {
         enter: styles.nextImgEnter,
         enterActive: styles.nextImgEnterActive,
@@ -44,7 +46,7 @@ const MobileSlider = props => {
     })
 
 
-
+    console.log(index)
     return (
         <div className={styles.slider}>
 
@@ -54,7 +56,8 @@ const MobileSlider = props => {
 
                 <TransitionGroup childFactory={forsedChangeClass(dynamicClass)}>
                     <CSSTransition key={props.data[index]} timeout={1000} classNames={dynamicClass}>
-                        <img className={styles.slide__img} src={props.data[index]} alt={props.data[index]} />
+                        <img className={`${styles.slide__img} ${index === 0 ? styles.slideFix : ''}`} src={props.data[index]} alt={props.data[index]} /> 
+                        {/*slideFIx - жахливо підібрані картинки (всі різні по розміру), тому потрібен додатковий стиль для однієї картинки, щоб вона адекватно відображалась*/}
                     </CSSTransition>
                 </TransitionGroup>
 

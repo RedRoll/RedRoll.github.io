@@ -91,6 +91,27 @@
 
 /* end content */
 
+
+/* slides section */
+
+.slides__navbar-wrapper {
+    width: 100%;
+    border: 1px solid white;
+}
+
+.wrapper-box {
+    margin: 0 auto;
+    display: flex;
+}
+
+.box__img {
+    
+    max-width: 100%;
+    /* перша картинка масштабується - шнші ні */
+}
+
+/* end slides section */
+
 @media(max-width: 1050px) {
     .content__button {
         top: 86%;

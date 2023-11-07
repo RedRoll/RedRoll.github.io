@@ -11,11 +11,12 @@ import img2 from '../../graphic/img/hydraTech2.png'
 import img3 from '../../graphic/img/hydraTech3.png'
 import img4 from '../../graphic/img/hydraTech4.png'
 
-const data = [img2, img3, img4]
+const data = [img1, img2, img3, img4]
 
 const TechnologiesSlide = () => {
 
     const [mobile, setMobile] = useState(window.innerWidth <= 599)
+    const [open, setOpen] = useState(false)
 
     useEffect( () => {
 
@@ -28,6 +29,10 @@ const TechnologiesSlide = () => {
         }
 
     }, [mobile])
+
+    const clickHandler = () => setOpen(prevState =>  !prevState)
+
+    console.log(open)
 
 
     return (
@@ -42,7 +47,7 @@ const TechnologiesSlide = () => {
                         <h1>TECHNOLOGIES & HARDWARE</h1>
                         <h2>USED BY HYDRA VR.</h2>
                     </div>
-                    <Button className={styles.content__button} >
+                    <Button className={styles.content__button} onClick={clickHandler}>
                         <div className={styles.button__arrow}></div>
                     </Button>
                 </div>
@@ -58,10 +63,13 @@ const TechnologiesSlide = () => {
 
                 :
 
-                <div>desktop</div>
+                open ? <div className={styles['slides__navbar-wrapper']}>
+                    <div className={styles['wrapper-box']}>{data.map( (item, index) => <img className={styles.box__img} key={index} src={item} alt='img' />)}</div>
+                </div> : ''
             }
 
             </div>
+            
         </div>
     )
 }
