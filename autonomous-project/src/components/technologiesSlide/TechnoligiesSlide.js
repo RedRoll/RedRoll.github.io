@@ -2,6 +2,7 @@ import styles from './TechnologiesSlide.module.css'
 
 import { useState, useEffect } from 'react'
 
+
 import Button from '../UI/button/Button'
 import MobileSlider from './mobileSlider/MobileSlider'
 
@@ -18,7 +19,7 @@ const TechnologiesSlide = () => {
     const [mobile, setMobile] = useState(window.innerWidth <= 599)
     const [open, setOpen] = useState(false)
 
-    useEffect( () => {
+    useEffect(() => {
 
         const onResize = () => setMobile(window.innerWidth <= 599)
 
@@ -30,7 +31,7 @@ const TechnologiesSlide = () => {
 
     }, [mobile])
 
-    const clickHandler = () => setOpen(prevState =>  !prevState)
+    const clickHandler = () => setOpen(prevState => !prevState)
 
     console.log(open)
 
@@ -47,7 +48,7 @@ const TechnologiesSlide = () => {
                         <h1>TECHNOLOGIES & HARDWARE</h1>
                         <h2>USED BY HYDRA VR.</h2>
                     </div>
-                    <Button className={styles.content__button} onClick={clickHandler}>
+                    <Button className={`${styles.content__button} ${open ? styles['button-open'] : ''}`} onClick={clickHandler}>
                         <div className={styles.button__arrow}></div>
                     </Button>
                 </div>
@@ -55,21 +56,22 @@ const TechnologiesSlide = () => {
             </div>
 
             <div className={styles['main-wrapper__slides']}>
-                
+
                 {
-                mobile ?
+                    mobile ?
 
-                <MobileSlider data={data}/>
+                        <MobileSlider data={data} />
 
-                :
+                        :
 
-                open ? <div className={styles['slides__navbar-wrapper']}>
-                    <div className={styles['wrapper-box']}>{data.map( (item, index) => <img className={styles.box__img} key={index} src={item} alt='img' />)}</div>
-                </div> : ''
-            }
+                        <div className={` ${styles['slides__navbar-wrapper']} ${open ? styles.open : ''}`}>
+                            <div className={styles['wrapper-box']}>{data.map((item, index) => <div><img className={styles.box__img} key={index} src={item} alt='img' /></div>)}</div>
+                        </div> 
+                }
+                {/* крч... початково їбався я з цими картинками в флекс контейнері дуже довго: (не масштабувались при зменьшенні viewport) i max-width: 100% і dislay:block.. нічого не допомогло. Почали масштабуватись коли кожну картинку обгорнув в div - почало працювати прям з коробки(масштабування) */}
 
             </div>
-            
+
         </div>
     )
 }
