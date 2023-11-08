@@ -1,0 +1,6 @@
+.main-numbers {
+    border: 1px solid white;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 124px;
+}

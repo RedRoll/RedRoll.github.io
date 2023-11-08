@@ -1,4 +1,29 @@
 .main-wrapper {
     display: flex;
     flex-direction: column;
+    position: relative;
+    overflow-x: visible;
+    
 }
+
+/* hydraArrow component */
+
+.wrapper__hydraArrow {
+    margin-top: 123px;
+}
+
+/* end hydraArrow component */
+
+@media(max-width: 1120px) {
+    .wrapper__hydraArrow {
+        flex-direction: column;
+        row-gap: 25px;
+       }
+}
+
+@media(max-width: 599px) {
+    .wrapper__hydraArrow {
+        margin-top: 50px;
+    }
+}
+

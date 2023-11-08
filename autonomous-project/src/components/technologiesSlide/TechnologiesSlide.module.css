@@ -1,6 +1,7 @@
 .main-wrapper__technologies {
     width: 100%;
     position: relative;
+    z-index: 2;
 }
 
 .technologies__background {
@@ -126,10 +127,12 @@
 .box__img {
     max-width: 252px;
     width: 100%;
-    /* перша картинка масштабується - шнші ні */
+
 }
 
 /* end slides section */
+
+
 @media(max-width: 1120px) {
     .box__img {
         max-width: 200px;
