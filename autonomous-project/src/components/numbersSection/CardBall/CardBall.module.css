@@ -2,7 +2,8 @@
     display: flex;
     align-items: center;
     flex-direction: column;
-
+    row-gap: 25px;
+    z-index: 3;
 }
 
 .ball__bigBall {
@@ -22,9 +23,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-
     color: #343045;
-
     font-family: Montserrat;
     font-size: 64px;
     font-weight: 700;
@@ -32,7 +31,7 @@
 
 .ball__text {
     display: flex;
-
+    align-items: center;
 }
 
 .text__title {

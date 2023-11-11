@@ -1,6 +1,7 @@
 import styles from './NumbersSection.module.css'
 
 import CardBall from './CardBall/CardBall'
+import NumberVector from '../../graphic/svg/numberSection/NumberVector'
 
 const data = [
     { title: '3D Conception', number: '01', subTitle: '& Design' },
@@ -10,9 +11,16 @@ const data = [
 ]
 
 const NumbersSection = () => {
+
+    
+
+
     return (
-        <div className={styles['main-numbers']}>
-            {data.map(item => <CardBall data={item} />)}
+        <div className={styles.wrapper}>
+            <div className={styles['main-numbers']}>
+                {data.map((item, index) => <CardBall className={index === 1 || index === 3 ? styles.cardBallMarginRight : styles.cardBallMarginLeft} key={item.number} data={item} />)}
+            </div>
+            <NumberVector className={styles.numbers__vector} />
         </div>
     )
 }

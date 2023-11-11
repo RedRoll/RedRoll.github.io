@@ -1,10 +1,11 @@
 import styles from './TechnologiesSlide.module.css'
 
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 
 
 import Button from '../UI/button/Button'
 import MobileSlider from './mobileSlider/MobileSlider'
+import WidthListener from '../UI/mobileMode/MobileMode'
 
 import backIMG from '../../graphic/img/technologiesBackground.png'
 import img1 from '../../graphic/img/hydraTech1.png'
@@ -16,20 +17,9 @@ const data = [img1, img2, img3, img4]
 
 const TechnologiesSlide = () => {
 
-    const [mobile, setMobile] = useState(window.innerWidth <= 599)
     const [open, setOpen] = useState(false)
 
-    useEffect(() => {
-
-        const onResize = () => setMobile(window.innerWidth <= 599)
-
-        window.addEventListener('resize', onResize)
-
-        return () => {
-            window.removeEventListener('resize', onResize)
-        }
-
-    }, [mobile])
+   
 
     const clickHandler = () => setOpen(prevState => !prevState)
 
@@ -55,25 +45,21 @@ const TechnologiesSlide = () => {
 
             </div>
 
-            <div className={styles['main-wrapper__slides']}>
+            <WidthListener width={599} className={styles['main-wrapper__slides']}>
 
-                {
-                    mobile ?
+                <MobileSlider data={data} />
 
-                        <MobileSlider data={data} />
-
-                        :
-
-                        <div className={` ${styles['slides__navbar-wrapper']} ${open ? styles.open : ''}`}>
-                            <div className={styles['wrapper-box']}>{data.map((item, index) => <div><img className={styles.box__img} key={index} src={item} alt='img' /></div>)}</div>
-                        </div> 
-                }
+                <div className={` ${styles['slides__navbar-wrapper']} ${open ? styles.open : ''}`}>
+                    <div className={styles['wrapper-box']}>{data.map((item, index) => <div key={index}><img className={styles.box__img} key={index} src={item} alt='img' /></div>)}</div>
+                </div>
                 {/* крч... початково їбався я з цими картинками в флекс контейнері дуже довго: (не масштабувались при зменьшенні viewport) i max-width: 100% і dislay:block.. нічого не допомогло. Почали масштабуватись коли кожну картинку обгорнув в div - почало працювати прям з коробки(масштабування) */}
 
-            </div>
-
+            </WidthListener>
+           
         </div>
     )
 }
+
+
 
 export default TechnologiesSlide

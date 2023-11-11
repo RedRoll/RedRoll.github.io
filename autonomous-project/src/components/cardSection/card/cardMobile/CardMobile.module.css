@@ -1,0 +1,22 @@
+.card-mobile {
+    width: 100%;
+    margin: 110px 0;
+    height: 510px;
+    display: flex;
+}
+
+.slide-wrapper {
+    /* width: 100%; */
+    width: 310px;
+    /*ширина задана для кнопок перемикання, щоб вони звужались разом з card (310px це ширина card), таким чиом кнопки просто виставлені absolute на потрібному місці і не зміщаються поки card не почне зменьшуватись */
+    position: relative;
+    margin: 0 auto;
+}
+
+
+
+@media(max-width: 400px) {
+    .card-mobile {
+        margin: 90px 0;
+    }
+}

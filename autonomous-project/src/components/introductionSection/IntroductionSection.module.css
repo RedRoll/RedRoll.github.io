@@ -96,7 +96,6 @@
 .middleSection__vector1,
 .middleSection__vector2 {
     position: absolute;
-    top: 0;
     z-index: 1;
     stroke-width: 6px;
     stroke: #343045;

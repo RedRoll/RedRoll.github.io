@@ -1,16 +1,13 @@
 import styles from './Navbar.module.css'
-import { useState, useEffect } from 'react'
-
-
 
 import Icon1 from '../../../graphic/svg/heroSection-vector/heroIcons/Icon1'
 import Icon2 from '../../../graphic/svg/heroSection-vector/heroIcons/Icon2'
 import Icon3 from '../../../graphic/svg/heroSection-vector/heroIcons/Icon3'
 
 
-
 import Item from './item/Item'
 import MobileNav from './mobileNav/MobileNav'
+import WidthListener from '../../UI/mobileMode/MobileMode'
 
 
 
@@ -39,37 +36,13 @@ const data = [
 
 const NavBar = () => {
 
-
-    const [mobile, setMobile] = useState(window.innerWidth <= 1080)
-
-
-
-    useEffect(() => {
-        const resizeHandler = () => {
-            setMobile(window.innerWidth <= 1080)
-            // функція, яка робить update state - mobile
-        }
-        window.addEventListener('resize', resizeHandler)
-        // частина написана нижче потрібна(тобто спрацює вона тільки тоді), коли компонент буде забраний з DOM (коли він буде unmounted) - тоді listener буде прибраний (більше не буде слухати подію), це робиться для оптимізації і економії ресурсів пк
-
-        return () => {
-            window.removeEventListener('resize', resizeHandler)
-        }
-
-    }, [mobile]) // пустий массив, як другий аргумент useEffect означає що хук useEffect запуститься/спрацює тільки раз при візуалізації компоненту, В даному випадку він запуститься при зміні змінної mobile (не важливо яка зміна, просто зміна даних на ті що відрізняються від актуальних)
-
- 
-
     return (
-        <nav className={styles['nav-bar']}>
-            {
-            mobile ? 
-            <MobileNav data={data} /> 
-            :
-            data.map( (item, index) => <Item key={index} className={index === 1 ? styles['item-border'] : ''} data={item} />)
 
-            }
-        </nav>
+        <WidthListener width={1080} className={styles['nav-bar']}>
+            <MobileNav data={data} />
+            {data.map( (item, index) => <Item key={index} className={index === 1 ? styles['item-border'] : ''} data={item} />)}
+        </WidthListener>
+    
     )
 }
 

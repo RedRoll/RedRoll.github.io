@@ -120,7 +120,7 @@
 .graphics__vector3,
 .text__vector4 {
     position: absolute;
-    stroke-width: 6px;
+    strokeWidth: 6px;
     stroke: #343045;
     z-index: -1;
 }

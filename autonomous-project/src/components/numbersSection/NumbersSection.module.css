@@ -1,6 +1,36 @@
-.main-numbers {
-    border: 1px solid white;
-    display: flex;
-    justify-content: space-between;
+.wrapper {
     margin-top: 124px;
+    position: relative;
 }
+
+
+.main-numbers {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: 70px;
+}
+
+.numbers__vector {
+    position: absolute;
+    top: 0;
+    left: 0;
+    max-width: 1449px;
+    width: 100%;
+    max-height: 163px;
+    height: 100%;
+}
+
+/* media */
+
+@media(max-width: 1120px) {
+    .main-numbers {
+        grid-template-columns: repeat(2, 270px);
+        grid-row-gap: 45px;
+        grid-column-gap: 45px;
+        justify-content: center;
+        /* place-items: center; */
+    }
+
+}
+
+/* end media */

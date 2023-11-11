@@ -3,8 +3,11 @@ import styles from './CardBall.module.css'
 import SmallArrow from '../../../graphic/svg/cardBall/SmallArrow'
 
 const CardBall = props => {
+
+    const classes = `${props.className} ${styles['card-ball']}`
+
     return(
-        <div className={styles['card-ball']}>
+        <div className={classes}>
             <div className={styles.ball__bigBall}>
                 <div className={styles.bigBall__content}>
                     <div className={styles.content__number}>{props.data.number}</div>
