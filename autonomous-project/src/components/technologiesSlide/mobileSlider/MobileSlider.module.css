@@ -1,32 +1,35 @@
 .slider {
     width: 100%;
-    position: relative;
+    /* position: relative; */
     height: 116px;
-    display: flex;
+    /* display: flex; */
     /* overflow-y: hidden;  якщо тут цю властивість то при звуженні viweport відступи body (прописані margin для загального wrapper) будуть перекривати/наїжати поверх кнопки перемикання*/
     margin: 70px 0px;
     
 }
 
 .slider__wrapper {
-    width: 100%;
-    max-width: 300px;
-    padding: 0 40px;
+    /* width: 100%;
+    max-width: 300px; */
+    /* padding: 0 40px; */
     position: relative;
-    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    /* margin: 0 auto; */
 }
 
-.slide__img,
-.slider__nextBut,
+
+/* .slider__nextBut,
 .slider__prevBut {
     position: absolute;
-}
+} */
 
 .slide__img {
+    /* position: absolute; */
     max-width: 252px;
     width: 100%;
     left: 50%;
-    transform: translateX(-50%);
+    /* transform: translateX(-50%); */
     object-fit: cover;
     object-position: 0 -56px;
     height: 116px;

@@ -36,12 +36,14 @@ const Slider = props => {
 
     const [dynamicClass, setDynamicClass] = useState(nextClasses)
 
+    const buttonClasses = `${props.styling.activeButton} ${styles['active-button']}` // додав модифікатор (можливість зимінювати стиль на пряму там, де цей компонент буде імпортований) стилю кліку, бо дефолтний не завжди підходить
+
     const nextClickHandler = () => {
         props.setIndex(prevState => prevState === props.data.length - 1 ? 0 : prevState + 1)
         setDynamicClass(() => nextClasses)
         setCliked(() => {
             return {
-                next: styles['active-button']
+                next: buttonClasses
             }
         })
         setTimeout(() => {
@@ -58,7 +60,7 @@ const Slider = props => {
         setDynamicClass(() => prevClasses)
         setCliked(() => {
             return {
-                prev: styles['active-button']
+                prev: buttonClasses
             }
         })
         setTimeout(() => {
@@ -70,12 +72,12 @@ const Slider = props => {
         }, 300);
     }
 
-    const forsedChangeClass = myClass => child => cloneElement(child, {  
+    const forsedChangeClass = myClass => child => cloneElement(child, {
         classNames: myClass
     })
 
-    const classes1 = `${styles.buttonPrev} ${clicked.prev}` /*основний стиль кнопки + стиль кліку по кнопці*/
-    const classes2 = `${styles.buttonNext} ${clicked.next}`
+    const classes1 = `${styles.buttonPrev} ${clicked.prev} ${props.styling.prevButton}` /*основний стиль кнопки + стиль кліку по кнопці*/
+    const classes2 = `${styles.buttonNext} ${clicked.next} ${props.styling.nextButton}`
 
     return (
         <div className={props.styling.slider}>
@@ -97,4 +99,11 @@ const Slider = props => {
 
 export default Slider
 
-// propses needed: styling/data/index/setIndex 
+// propses needed: 
+// const styling = {
+//     slider: styles.slider, - required props!
+//     slideWrapper: styles.slideWrapper, - required props!
+//     nextButton: styles.nextButton, - optional props(slider has a standard style)
+//     prevButton: styles.prevButton, - optional props(slider has a standard style)
+//     activeButton: styles.activeButton - optional props(slider has a standard style)
+// }

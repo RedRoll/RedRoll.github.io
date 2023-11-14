@@ -19,7 +19,7 @@
 }
 
 .active-button {
-    background: linear-gradient(90deg, #8270c7 0%, #776ca8 100%);
+    background: linear-gradient(90deg, #8270c7 0%, #776ca8 100%)!important;
     transform: translateY(10%);
 }
 

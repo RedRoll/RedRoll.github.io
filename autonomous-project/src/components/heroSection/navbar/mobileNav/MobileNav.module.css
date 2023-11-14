@@ -1,0 +1,27 @@
+.slider {
+    width: 100%;
+}
+.slideWrapper {
+    position: relative;
+}
+
+.prevButton, .nextButton {
+    
+    transform: translateY(-50%);
+}
+
+.prevButton {
+ left: 2%;
+}
+
+.nextButton {
+    right: 2%;
+}
+
+.activeButton {
+    transform: translateY(-40%);
+}
+
+
+
+
