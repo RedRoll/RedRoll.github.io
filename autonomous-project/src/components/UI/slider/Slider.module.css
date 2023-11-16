@@ -20,7 +20,7 @@
 
 .active-button {
     background: linear-gradient(90deg, #8270c7 0%, #776ca8 100%)!important;
-    transform: translateY(10%);
+    transform: translateY(10%)!important;
 }
 
 
@@ -58,22 +58,25 @@
 
 .nextImgEnter {
     opacity: 0;
-    left: 30%;
+    left: -60%;
+    
 }
 
 .nextImgEnterActive {
     opacity: 1;
-    left: 50%;
+    left: 0%;
+    
     transition: left 1s ease, opacity .5s ease;
 }
 
 .nextImgEnterDone {
     opacity: 1;
-    left: 50%;
+    
+    left: 0%;
 }
 
 .nextImgExit {
-    left: 50%;
+    left: 0%;
     opacity: 1;
 }
 
@@ -95,33 +98,33 @@
 
 .prevImgEnter {
     opacity: 0;
-    left: 80%;
+    left: 60%;
 }
 
 .prevImgEnterActive {
     opacity: 1;
-    left: 50%;
+    left: 0%;
     transition: left 1s ease, opacity .8s ease;
 }
 
 .prevImgEnterDone {
     opacity: 1;
-    left: 50%;
+    left: 0%;
 }
 
 .prevImgExit {
-    left: 50%;
+    left: 0%;
     opacity: 1;
 }
 
 .prevImgExitActive {
-    left: 30%;
+    left: -80%;
     opacity: 0;
     transition: left 1s ease, opacity .8s ease;
 }
 
 .prevImgExitDone {
-    left: 30%;
+    left: -80%;
     opacity: 0;
 }
 

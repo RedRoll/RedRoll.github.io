@@ -1,8 +1,17 @@
 .slider {
     width: 100%;
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
 }
 .slideWrapper {
+   
+    
+}
+
+.item-wrapper {
     position: relative;
+    width: 400px;
 }
 
 .prevButton, .nextButton {
@@ -10,16 +19,17 @@
     transform: translateY(-50%);
 }
 
-.prevButton {
- left: 2%;
+.nextButton {
+    right: 5%!important;
 }
 
-.nextButton {
-    right: 2%;
+.prevButton {
+ left: 5%!important;
 }
+
 
 .activeButton {
-    transform: translateY(-40%);
+    transform: translateY(0%)!important;
 }
 
 

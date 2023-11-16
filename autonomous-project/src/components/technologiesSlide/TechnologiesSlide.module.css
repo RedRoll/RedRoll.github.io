@@ -100,9 +100,6 @@
 
 
 /* slides section */
-.main-wrapper__slides {
-    width: 100%;
-}
 
 .slides__navbar-wrapper{
     max-height: 0;
@@ -181,6 +178,7 @@
     .content__button {
         display: none;
     }
+
 }
 
 @media(max-width: 499px) {

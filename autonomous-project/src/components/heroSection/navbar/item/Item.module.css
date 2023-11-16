@@ -1,5 +1,6 @@
 .item {
     flex: 1 1 auto;
+   
     display: flex;
     column-gap: 30px;
     justify-content: center;
@@ -35,6 +36,7 @@
 @media(max-width: 1080px) {
     .item {
         position: absolute;
+        top: 0;
         left: 50%;
         transform: translate(-50%, -50%);
         white-space: nowrap;

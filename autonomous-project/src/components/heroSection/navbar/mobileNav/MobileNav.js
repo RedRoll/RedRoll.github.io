@@ -16,13 +16,15 @@ const MobileNav = props => {
         prevButton: styles.prevButton,
         activeButton: styles.activeButton
     }
- 
+
 
     return (
         <Slider styling={styling} data={props.data} setIndex={setIndex} index={index}>
-            <Item data={props.data[index]} />
+            <div className={styles['item-wrapper']}>
+                <Item data={props.data[index]} />
+            </div>
         </Slider>
- 
+
     )
 }
 
