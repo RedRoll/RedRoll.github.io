@@ -4,17 +4,16 @@ import SmallArrow from '../../../graphic/svg/cardBall/SmallArrow'
 
 const CardBall = props => {
 
-    const classes = `${props.className} ${styles['card-ball']}`
 
     return(
-        <div className={classes}>
+        <div className={styles['card-ball']}>
             <div className={styles.ball__bigBall}>
                 <div className={styles.bigBall__content}>
                     <div className={styles.content__number}>{props.data.number}</div>
                 </div>
             </div>
             <div className={styles.ball__text}>
-                <SmallArrow />
+                <SmallArrow className={styles.text__vector} />
                 <h1 className={styles.text__title}>{props.data.title}<br/><span>{props.data.subTitle}</span></h1>
             </div>
         </div>

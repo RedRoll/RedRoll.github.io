@@ -5,6 +5,7 @@ import HeroSection from "./components/heroSection/HeroSection";
 import IntroductionSection from "./components/introductionSection/IntroductionSection";
 import CardnTechnologies from "./components/card&technologies/Card&Technologies";
 import NumbersSection from "./components/numbersSection/NumbersSection";
+import HydraForm from "./components/hydraForm/HydraFrom";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <IntroductionSection />
         <CardnTechnologies />
         <NumbersSection />
+        <HydraForm />
       </Wrapper>
       
     </div>

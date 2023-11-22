@@ -1,5 +1,6 @@
 .wrapper {
     margin-top: 124px;
+    width: 100%;
     position: relative;
 }
 
@@ -8,17 +9,63 @@
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     column-gap: 70px;
+    margin-bottom: 112px;
 }
 
-.numbers__vector {
+.numbers__vector, .numbers__vector1 {
     position: absolute;
-    top: 0;
     left: 0;
     max-width: 1449px;
     width: 100%;
     max-height: 163px;
     height: 100%;
 }
+
+.numbers__vector {
+    top: 0;
+}
+
+.numbers__vector1 {
+    position: absolute;
+    bottom: 20%;
+    display: none;
+}
+
+/* slider styles */
+
+
+.slider {
+    width: 100%;
+    position: relative;
+    height: 291px;
+    margin-bottom: 81px;
+}
+
+.slideWrapper {
+    /* position: relative; */
+    display: flex;
+    justify-content: center;
+}
+
+/* .prevButton, .nextButton {
+    top: 100%;
+} */
+
+.nextButton {
+    right: 0%;
+    
+}
+
+.prevButton {
+    left: 0%;
+}
+
+.card-wrapper {
+    position: relative;
+    width: 200px;
+}
+
+/* end slider slides */
 
 /* media */
 
@@ -31,6 +78,16 @@
         /* place-items: center; */
     }
 
+    .numbers__vector1 {
+        display: block;
+    }
+
+}
+
+@media(max-width: 400px) {
+    .slider {
+        height: 200px;
+    }
 }
 
 /* end media */

@@ -69,11 +69,16 @@
     .hydraArrow__rightSide {
         display: none;
     }
-}
 
-@media(max-width: 342px) {
-    .hydraArrow__title, .hydraArrow__title1 {
-        font-size: 30px;
+
+    .hydraArrow__title {
+        font-size: 28px;
+    }
+
+    .arrow__title1 {
+        font-size: 28px;
     }
 }
+
+
 /* end media */
