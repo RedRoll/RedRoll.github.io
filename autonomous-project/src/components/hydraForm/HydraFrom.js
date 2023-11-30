@@ -16,11 +16,11 @@ const HydraForm = props => {
             <div className={styles.form__inputs}>
 
                 <input placeholder='First Name' type="text" className={`${styles.inputs__item} ${styles.gridItem1}`} />
-                <input placeholder='First Name' type="text" className={`${styles.inputs__item} ${styles.gridItem2}`} />
-                <input placeholder='First Name' type="text" className={`${styles.inputs__item} ${styles.gridItem3}`} />
-                <input placeholder='First Name' type="text" className={`${styles.inputs__item} ${styles.gridItem4}`} />
-                <input placeholder='First Name' type="text" className={`${styles.inputs__item} ${styles.gridItem5}`} />
-                <input placeholder='First Name' type="text" className={`${styles.inputs__item} ${styles.gridItem6}`} />
+                <input placeholder='Last Name' type="text" className={`${styles.inputs__item} ${styles.gridItem2}`} />
+                <input placeholder='Email' type="email" className={`${styles.inputs__item} ${styles.gridItem3}`} />
+                <input placeholder='Phone number' type="tel" className={`${styles.inputs__item} ${styles.gridItem4}`} />
+                <input placeholder='Subject' type="text" className={`${styles.inputs__item} ${styles.gridItem5}`} />
+                <textarea placeholder='Tell us something...' type="text area" className={`${styles.inputs__item} ${styles.gridItem6}`} />
                 
                 
                 
